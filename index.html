@@ -50,14 +50,17 @@
 	</div>
 	<div class="feature section fp-auto-height" id="section1">
 		<div class="feature-item">
+			<div class="sicon s01"></div>
 			<h2 text="feature01tit"></h2>
 			<p text="feature01des"></p>
 		</div>
 		<div class="feature-item">
+			<div class="sicon s02"></div>
 			<h2 text="feature02tit"></h2>
 			<p text="feature02des"></p>
 		</div>
 		<div class="feature-item">
+			<div class="sicon s03"></div>
 			<h2 text="feature03tit"></h2>
 			<p text="feature02des"></p>
 		</div>
@@ -69,27 +72,27 @@
 		</h2>
 		<div class="adv-block">
 			<div class="adv-item">
-				<img src="img/adv-1.svg">
+				<div class="advicon f01"><b></b></div>
 				<h3 text="advdes01"></h3>
 			</div>
 			<div class="adv-item">
-				<img src="img/adv-2.svg">
+				<div class="advicon f02"><b></b></div>
 				<h3 text="advdes02"></h3>
 			</div>
 			<div class="adv-item">
-				<img src="img/adv-3.svg">
+				<div class="advicon f03"><b></b></div>
 				<h3 text="advdes03"></h3>
 			</div>
 			<div class="adv-item">
-				<img src="img/adv-4.svg">
+				<div class="advicon f04"><b></b></div>
 				<h3 text="advdes04"></h3>
 			</div>
 			<div class="adv-item">
-				<img src="img/adv-5.svg">
+				<div class="advicon f05"><b></b></div>
 				<h3 text="advdes05"></h3>
 			</div>
 			<div class="adv-item">
-				<img src="img/adv-6.svg">
+				<div class="advicon f06"><b></b></div>
 				<h3 text="advdes06"></h3>
 			</div>
 		</div>
@@ -161,6 +164,13 @@ $(document).ready(function() {
 		anchors: ['', 'service', 'advantage', 'products', 'partners', 'contact'],
 		autoScrolling: false,
 		fitToSection: false,
+		afterLoad: function(anchorLink, index) {
+			var loadedSection = $(this);
+			console.log(index);
+			if (index >= 2) {
+				$('.sicon').addClass('showicon');
+			}
+		}
 	});
 });
 </script>

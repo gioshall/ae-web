@@ -35,7 +35,7 @@ $('.lang').click(function(){
 	}
 })
 
-setLang(i18n.zh);
+setLang(i18n.en);
 
 
 $('.menu-close').click(function(){

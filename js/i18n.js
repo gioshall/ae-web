@@ -51,8 +51,8 @@ var i18n = {
 		partners: 'partners',
 		contact: 'contact',
 		
-		feature01tit: 'Casino White Label Solution',
-		feature02tit: 'Lottery White Label Solution',
+		feature01tit: 'Casino White Label',
+		feature02tit: 'Lottery White Label',
 		feature03tit: 'Game API Integration',
 		feature01des: 'Comprehensive products including template design, technical setting up and background management system',
 		feature02des: 'Featuring with several market-leading lottery games, unlimited-layered agent system, and customized odd setting etc.',
