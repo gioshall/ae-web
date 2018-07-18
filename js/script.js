@@ -1,22 +1,21 @@
-function ipLookUp () {
-$.ajax('http://ip-api.com/json')
-.then(
-    function success(response) {
-        //console.log('User\'s Location Data is ', response);
-        console.log(response.country);
-    },
-
-    function fail(data, status) {
-        console.log('Request failed.  Returned status of',
-                    status);
-    }
-);
-}
-ipLookUp()
-
-
-
-
+// scroll
+$(document).ready(function() {
+	$('#fullpage').fullpage({
+		menu: '#menu',
+		anchors: ['', 'service', 'advantage', 'products', 'partners', 'contact'],
+		autoScrolling: false,
+		fitToSection: false,
+		afterLoad: function(anchorLink, index) {
+			var loadedSection = $(this);
+			if (index >= 2) {
+				$('.sicon, .gotop').addClass('showicon');
+			}
+			else {
+				$('.sicon, .gotop').removeClass('showicon');
+			}
+		}
+	});
+});
 
 //lang
 function setLang(e) {
@@ -35,10 +34,35 @@ $('.lang').click(function(){
 	}
 })
 
-setLang(i18n.en);
+function ipLookUp () {
+$.ajax('http://ip-api.com/json')
+.then(
+    function success(response) {
+        console.log(response.country);
+        if ( response.country == 'Taiwan' | 'China' ) {
+            $('.lang').addClass('zh');
+            setLang(i18n.zh);
+        } else {
+            $('.lang').removeClass('zh');
+            setLang(i18n.en);
+        };
+    },
+    function fail(data, status) {
+        console.log('Request failed.  Returned status of',
+                    status);
+    }
+);
+}
+ipLookUp()
 
 
 $('.menu-close').click(function(){
     $('header').toggleClass('menu-open');
 })
+
+$('.logo, .gotop').click(function(){
+    $("html, body").animate({ scrollTop: 0 }, 300);
+  return false;
+})
+
 
