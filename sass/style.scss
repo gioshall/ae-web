@@ -71,7 +71,7 @@ header {
 	align-items: center;
 	z-index: 10;
 	top: 0;
-	background: linear-gradient(to bottom, #000 0%,rgba(0,0,0,0) 100%);
+	background: linear-gradient(to bottom, rgba(0,0,0,0.8) 0%,rgba(0,0,0,0) 90%);
 	.logo {
 		position: relative;
 		z-index: 1;
@@ -247,12 +247,15 @@ header {
 	}
 }
 
+.fullpage-wrapper {
+	background: linear-gradient(155deg, rgba(55,55,55,.8) 0%,rgba(55,55,55,0) 30%);
+}
+
 .banner {
 	height: 70vh !important;
-	margin-bottom: -50px;
 	background-image: url(../img/banner-img.png);
 	background-position: center 50px;
-	background-size: 100% auto;
+	background-size: 130% auto;
 	background-repeat: no-repeat;
 	> div {
 		height: 100% !important;
@@ -279,6 +282,7 @@ header {
 }
 
 .feature {
+	background: linear-gradient(225deg, rgba(25,25,25,.9) 0%,rgba(25,25,25,0) 80%);
 	+.line-bg {
 		position: absolute;
 		width: 80vw;
@@ -289,7 +293,7 @@ header {
 		display: flex;
 		width: 90%;
 		position: relative;
-		margin: auto;
+		margin: -80px auto 0;
 		text-align: center;
 		justify-content: space-between;
 		flex-wrap: wrap;
@@ -343,9 +347,11 @@ header {
 				}
 				&.showicon {
 					&:before {
+						animation: ani-shadow 4s 0.8s linear infinite;
 						opacity: 1;
 					}
 					&:after {
+						animation: ani-updown 4s 0.8s linear infinite;
 						transform: translateY(0px);
 					}
 				}
@@ -359,17 +365,39 @@ header {
 					transition-delay: 0.3s;
 					background: url(../img/sicon-b2.png) center/100% no-repeat;
 				}
+				&.s02.showicon:before {
+					animation: ani-shadow 4s 1.1s linear infinite;
+				}
 				&.s02:after {
 					transition-delay: 0.3s;
 					background: url(../img/sicon-b1.png) center/100% no-repeat;
+				}
+				&.s02.showicon:after {
+					animation: ani-updown 4s 1.1s linear infinite;
 				}
 				&.s03:before {
 					transition-delay: 0.6s;
 					background: url(../img/sicon-c2.png) center/100% no-repeat;
 				}
+				&.s03.showicon:before {
+					animation: ani-shadow 4s 1.4s linear infinite;
+				}
 				&.s03:after {
 					transition-delay: 0.6s;
 					background: url(../img/sicon-c1.png) center/100% no-repeat;
+				}
+				&.s03.showicon:after {
+					animation: ani-updown 4s 1.4s linear infinite;
+				}
+				@keyframes ani-updown {
+					0%   {transform: translateY(0)}
+					60%   {transform: translateY(-4px)}
+					100%   {transform: translateY(0)}
+				}
+				@keyframes ani-shadow {
+					0%   {opacity: 1;transform: scale(1)}
+					60%   {opacity: 0.8;transform: translateY(4px) scale(0.9)}
+					100%   {opacity: 1;transform: scale(1)}
 				}
 			}
 		}
@@ -438,9 +466,12 @@ header {
 					left: 0;
 					display: block;
 				}
-				b:after {
-					animation: ani-opc 5s linear infinite;
+				b {
+					animation: ani-opc 5s ease infinite;
 					background: url(../img/ficon-base.png) center/100% no-repeat;
+				}
+				b:after {
+					background: url(../img/ficon-base-dust.png) center/100% no-repeat;
 				}
 				&:before,
 				&:after,
@@ -449,11 +480,11 @@ header {
 				}
 				&.f01 {
 					&:before {
-						animation: ani-opc 0.01s linear infinite;
+						animation: ani-opc 0.01s ease infinite;
 						background: url(../img/ficon-a1.png) center/100% no-repeat;
 					}
 					&:after {
-						animation: ani-move 4s 0.5s linear infinite;
+						animation: ani-move 4s 0.5s ease infinite;
 						background: url(../img/ficon-a3.png) center/100% no-repeat;
 					}
 					b:before {
@@ -462,7 +493,7 @@ header {
 				}
 				&.f02 {
 					&:before {
-						animation: ani-move 5s linear infinite;
+						animation: ani-move 5s ease infinite;
 						background: url(../img/ficon-b1.png) center/100% no-repeat;
 					}
 					&:after {
@@ -470,7 +501,7 @@ header {
 						background: url(../img/ficon-b2.png) center/100% no-repeat;
 					}
 					b:before {
-						animation: ani-move-opc 5s linear infinite;
+						animation: ani-move-opc 5s ease infinite;
 						background: url(../img/ficon-b3.png) center/100% no-repeat;
 					}
 				}
@@ -483,7 +514,7 @@ header {
 						background: url(../img/ficon-c2.png) center/100% no-repeat;
 					}
 					b:before {
-						animation: ani-move 6s linear infinite;
+						animation: ani-move 6s ease infinite;
 						background: url(../img/ficon-c3.png) center/100% no-repeat;
 					}
 				}
@@ -492,7 +523,7 @@ header {
 						background: url(../img/ficon-d1.png) center/100% no-repeat;
 					}
 					&:after {
-						animation: ani-move-scale 6s linear infinite;
+						animation: ani-move-scale 6s ease infinite;
 						background: url(../img/ficon-d2.png) center/100% no-repeat;
 					}
 				}
@@ -560,11 +591,13 @@ header {
 		width: 70vw;
 		right: 0;
 		margin-top: -100px;
+		z-index: 1;
 	}
 	> div {
 		width: 100%;
 		display: flex;
 		flex-wrap: wrap;
+		padding: 0;
 	}
 	.product-item {
 		position: relative;
@@ -631,10 +664,13 @@ header {
 }
 .partner {
 	position: relative;
-	width: 90%;
-	margin: auto;
+	width: 100%;
+	background: linear-gradient(255deg, rgba(25,25,25,.9) 0%,rgba(25,25,25,0) 80%);
 	> div {
 		padding: 30px 0;
+		position: relative;
+		width: 90%;
+		margin: auto;
 	}
 }
 .footer-logo-box{
@@ -853,13 +889,13 @@ header {
 		}
 	}
 	.lang {
-		right: 0;
+		right: 15px;
 	}
 	
 	.banner {
 		height: 540px !important;
-		background-position: right center;
-		background-size: auto 100%;
+		background-position: right bottom;
+		background-size: auto 85%;
 		.tagline {
 			width: 450px;
 			top: 30%;
@@ -886,9 +922,11 @@ header {
 		}
 		> div {
 			width: 750px;
+			margin: 0 auto;
 			.feature-item {
 				width: 230px;
-				height: 220px;
+				height: 230px;
+				margin-top: -80px;
 				padding: 0 20px;
 				text-align: center;
 				h2 {
@@ -901,7 +939,7 @@ header {
 					width: 190px;
 					height: 155px;
 					position: relative;
-					margin: -60px auto 0;
+					margin: -60px auto 20px;
 					top: initial;
 					left: initial;
 				}
@@ -929,8 +967,9 @@ header {
 	.product {	
 		+.line-bg {
 			width: auto;
-			margin-top: -150px;
+			margin-top: -40px;
 		}
+		> div {padding: 0;}
 		.product-item {
 			flex: 1;
 			height: 500px;
@@ -969,7 +1008,12 @@ header {
 		  margin: 10px;
 		}
 	}
-	.partner,
+	.partner {
+		> div {
+			width: 800px;
+			padding: 70px 0;
+		}
+	}
 	.contact {
 		width: 800px;
 		> div {

@@ -11,7 +11,7 @@ $(document).ready(function() {
 				$('.sicon, .gotop').addClass('showicon');
 			}
 			else {
-				$('.sicon, .gotop').removeClass('showicon');
+				$('.gotop').removeClass('showicon');
 			}
 		}
 	});
