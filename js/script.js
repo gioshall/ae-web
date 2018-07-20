@@ -35,11 +35,11 @@ $('.lang').click(function(){
 })
 
 function ipLookUp () {
-$.ajax('http://ip-api.com/json')
+$.ajax('https://ipapi.co/json')
 .then(
     function success(response) {
-        console.log(response.country);
-        if ( response.country == 'Taiwan' | 'China' ) {
+        console.log(response.country_name);
+        if ( response.country_name == 'Taiwan' | 'China' ) {
             $('.lang').addClass('zh');
             setLang(i18n.zh);
         } else {
