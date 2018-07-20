@@ -54,9 +54,9 @@ var i18n = {
 		feature01tit: 'Casino White Label',
 		feature02tit: 'Lottery White Label',
 		feature03tit: 'Game API Integration',
-		feature01des: 'Comprehensive products including template design, technical setting up and background management system',
-		feature02des: 'Featuring with several market-leading lottery games, unlimited-layered agent system, and customized odd setting etc.',
-		feature03des: 'Continuously develop new market-leading HTML5 games including WeChat mini games, slot games, lottery games and fishing games',
+		feature01des: 'Comprehensive template design, technical setting up and management system',
+		feature02des: 'Featuring with market-leading lottery games and customized odd setting.',
+		feature03des: 'We are committed to provide full support third party API.',
 		
 		advtit: 'Why AE',
 		advsub: 'Efficient, Stable, Secure',
