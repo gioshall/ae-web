@@ -1002,10 +1002,11 @@ header {
 		}	
 	}
 	.footer-logo-box{
-		justify-content:flex-start;
+		justify-content: space-between;
 		transform: scale(1);
 		> div{
 		  margin: 10px;
+		  width: auto;
 		}
 	}
 	.partner {

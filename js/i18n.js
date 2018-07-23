@@ -14,7 +14,7 @@ var i18n = {
 		feature02tit: '彩票平台包网',
 		feature03tit: 'API串接服务',
 		feature01des: '前台模板、技术建置到后台管理',
-		feature02des: '集成多樣彩種及豐富玩法，並可自定義賠率設置',
+		feature02des: '集成多样彩种及丰富玩法，并可自定义赔率设置',
 		feature03des: '不断推出让玩家欲罢不能的游戏技术团队提供全天支持',
 		
 		advtit: 'AE优势',

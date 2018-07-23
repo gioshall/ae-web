@@ -58,7 +58,15 @@ ipLookUp()
 
 $('.menu-close').click(function(){
     $('header').toggleClass('menu-open');
-})
+    var menuOpen = $('header').hasClass('menu-open');
+    if ( menuOpen == true ) {
+        $('header.menu-open nav').click(function(){
+            $('header').removeClass('menu-open');
+        })
+    }
+});
+
+
 
 $('.logo, .gotop').click(function(){
     $("html, body").animate({ scrollTop: 0 }, 300);
