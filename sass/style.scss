@@ -686,6 +686,11 @@ header {
 			height: 100%;
 			background:url(../img/footer-logos.png) no-repeat;
 			margin:0 auto;
+			a {
+				display: block;
+				width: 100%;
+				height: 100%;
+			}
 		}
 	}
 	.A-MEBA-B{
@@ -807,6 +812,10 @@ header {
 	.JDB {
 	  width: 83px;
 	  background-position: -2653px 0px;
+	}
+	.ultra {
+	  width: 83px;
+	  background:url(../img/logo-ultra.png) center/auto 100% no-repeat;
 	}
 }
 .contact {
